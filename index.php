@@ -44,20 +44,19 @@
                             echo "<td>".$personaPrimerApellido."</td>";
                         echo "</tr>";
                         $numero++;
-
                     }
-                
-                ?>
-               
+                ?>   
             </tbody>
         </table>
-         <!-- Button trigger modal -->
+        
+        <!-- Button trigger modal -->
 
         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">Registrar Persona</button>
 
     </div>
-   
+
     <!-- Modal -->
+
     <div class="modal fadev" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog modal-dialog-centered modal-dialog-scrollable">
         <div class="modal-content">
@@ -66,7 +65,7 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          <form action="registrar.php" method="post" class="row g-3 needs-validation" novalidate>
+            <form action="registrar.php" method="post" class="row g-3 needs-validation" novalidate>
                 <div class="col-md-12">
                     <label for="selTipoIdentificacion" class="form-label">Tipo de Identificación</label>
                     <select class="form-select" aria-label="Default select example" id="selTipoIdentificacion">
@@ -158,7 +157,7 @@
                     </select>
                 </div>
                 <button type="submit" class="btn btn-primary">Guardar</button>
-          </form>
+            </form>
         </div>
         <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>

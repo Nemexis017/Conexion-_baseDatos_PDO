@@ -1,6 +1,6 @@
 <?php
     class conexion{
-        private $dns;
+        private $dsn;
         private $server;
         private $usuario;
         private $baseDatos;
@@ -22,7 +22,6 @@
             }catch(PDOException $e){
                 echo "Error al conectar a la base de datos: " . $e->getMessage();
             }
-
             return $conexion;
         }
 
