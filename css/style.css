@@ -1,0 +1,23 @@
+.busquedaNavegacion{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.titulo{
+    margin-top: auto;
+    margin-bottom: auto;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    text-align: center;
+    font-size: 35px;
+}
+
+.border-botton{
+    border-bottom: 3px solid #000000;
+    margin: 20px;
+}
+
+.ubc-lef{
+    display: block;
+    float: right;
+    margin: 3px;
+}

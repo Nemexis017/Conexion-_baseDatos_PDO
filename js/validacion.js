@@ -1,4 +1,4 @@
-// Example starter JavaScript for disabling form submissions if there are invalid fields
+// Validacion del formulario
 (() => {
     'use strict'
   
@@ -16,4 +16,9 @@
         form.classList.add('was-validated')
       }, false)
     })
-  })()
+  })();
+
+// confirmacion de borrar datos 
+
+
+
