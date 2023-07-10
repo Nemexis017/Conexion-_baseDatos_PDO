@@ -17,6 +17,7 @@
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -24,7 +25,11 @@
     <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="fontawesome/css/all.css">
+
+    <!-- favicon -->
+    <link rel="icon" href="img/favicon/nota.icon">
 </head>
+
 <body>
     <div class="container-fluid">
         <div class="row border-botton">
@@ -33,7 +38,7 @@
             </div>
             <div class="col-3"></div>
             <div class="col-5 busquedaNavegacion">
-                <form class="d-flex" role="search" method="post" >
+                <form class="d-flex" role="search" method="post">
                     <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
                     <button class="btn btn-outline-secondary" type="submit" name="enviar">Buscar</button>
                 </form>
@@ -73,19 +78,20 @@
                         echo "</tr>";
                         $numero++;
                     }
-                ?>   
+                ?>
             </tbody>
         </table>
-        
+
         <!-- Button trigger modal -->
         <div class="col-12">
             <div class="row">
                 <div class="col-6"></div>
                 <div class="col-6 ">
-                    <button type="button" class="btn  btn-secondary ubc-lef bnt-agregar" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa-solid fa-user-plus"></i>  Registrar</button>
+                    <button type="button" class="btn  btn-secondary ubc-lef bnt-agregar" data-bs-toggle="modal"
+                        data-bs-target="#exampleModal"><i class="fa-solid fa-user-plus"></i> Registrar</button>
                 </div>
             </div>
-        </div>           
+        </div>
     </div>
 
     <!-- Modal -->
@@ -101,7 +107,8 @@
                     <form action="librerias/registrar.php" method="post" class="row g-3 needs-validation" novalidate>
                         <div class="col-md-12">
                             <label for="selTipoIdentificacion" class="form-label">Tipo de Identificación</label>
-                            <select class="form-select" aria-label="Default select example" id="selTipoIdentificacion" name="selTipoIdentificacion" required>
+                            <select class="form-select" aria-label="Default select example" id="selTipoIdentificacion"
+                                name="selTipoIdentificacion" required>
                                 <option value="" selected>Seleccione...</option>
                                 <?php
                                     foreach($resultadoIdentificacion as $filaTipoDocumento){
@@ -111,20 +118,22 @@
 
                                         echo '<option value="'.$resultadoId.'">'.$resultadoNombreIdentificacion.'</option>';
                                     }
-                                ?>   
+                                ?>
                             </select>
 
                         </div>
                         <div class="col-md-12">
                             <label for="txtIdentificacion" class="form-label">Identificación</label>
-                            <input type="text" class="form-control" id="txtIdentificacion" name="txtIdentificacion" required>
+                            <input type="text" class="form-control" id="txtIdentificacion" name="txtIdentificacion"
+                                required>
                             <div class="valid-feedback">
-                                Digitar el numero de Indentificacion 
+                                Digitar el numero de Indentificacion
                             </div>
                         </div>
                         <div class="col-md-12">
                             <label for="txtPrimerNombre" class="form-label">Primer nombre</label>
-                            <input type="text" class="form-control" id="txtPrimerNombre"  name="txtPrimerNombre" required>
+                            <input type="text" class="form-control" id="txtPrimerNombre" name="txtPrimerNombre"
+                                required>
                             <div class="valid-feedback">
                                 Digitar el primer nombre
                             </div>
@@ -132,7 +141,8 @@
 
                         <div class="col-md-12">
                             <label for="txtNombres" class="form-label">Segundo nombre</label>
-                            <input type="text" class="form-control" id="txtSegundoNombre"  name="txtSegundoNombre" required>
+                            <input type="text" class="form-control" id="txtSegundoNombre" name="txtSegundoNombre"
+                                required>
                             <div class="valid-feedback">
                                 Digitar el segundo nombre
                             </div>
@@ -140,7 +150,8 @@
 
                         <div class="col-md-12">
                             <label for="txtPrimerApellido" class="form-label">Primer apellido</label>
-                            <input type="text" class="form-control" id="txtPrimerApellido"  name="txtPrimerApellido" required>
+                            <input type="text" class="form-control" id="txtPrimerApellido" name="txtPrimerApellido"
+                                required>
                             <div class="valid-feedback">
                                 Digitar el primer apellido
                             </div>
@@ -148,15 +159,17 @@
 
                         <div class="col-md-12">
                             <label for="txtSegundoApellido" class="form-label">Segundo apellido</label>
-                            <input type="text" class="form-control" id="txtSegundoApellido"  name="txtSegundoApellido" required>
+                            <input type="text" class="form-control" id="txtSegundoApellido" name="txtSegundoApellido"
+                                required>
                             <div class="valid-feedback">
-                                Digitar el segundo  apellido
+                                Digitar el segundo apellido
                             </div>
                         </div>
 
                         <div class="col-md-12">
                             <label for="selFechaNacimiento" class="form-label">Fecha Nacimieto</label>
-                            <input type="date" class="form-control" id="selFechaNacimiento"  name="selFechaNacimiento" required>
+                            <input type="date" class="form-control" id="selFechaNacimiento" name="selFechaNacimiento"
+                                required>
                             <div class="valid-feedback">
                                 Seleccione la fecha de nacimiento
                             </div>
@@ -164,7 +177,7 @@
 
                         <div class="col-md-12">
                             <label for="txtTelefono" class="form-label">Telefono</label>
-                            <input type="text" class="form-control" id="txtTelefono"  name="txtTelefono" required>
+                            <input type="text" class="form-control" id="txtTelefono" name="txtTelefono" required>
                             <div class="valid-feedback">
                                 Digitar el telefono
                             </div>
@@ -172,15 +185,17 @@
 
                         <div class="col-md-12">
                             <label for="txtCorreoEletronico" class="form-label">Correo Eletronico</label>
-                            <input type="text" class="form-control" id="txtCorreoEletronico"  name="txtCorreoEletronico" required>
+                            <input type="text" class="form-control" id="txtCorreoEletronico" name="txtCorreoEletronico"
+                                required>
                             <div class="valid-feedback">
                                 Digitar el correo eletronico
                             </div>
                         </div>
                         <div class="col-md-12">
-                            
+
                             <label for="selMunicipioNacimiento" class="form-label">Municipio Nacimiento</label>
-                            <select class="form-select" aria-label="Default select example" id="selMunicipioNacimiento" name="selMunicipioNacimiento" required>
+                            <select class="form-select" aria-label="Default select example" id="selMunicipioNacimiento"
+                                name="selMunicipioNacimiento" required>
                                 <option value="" selected>Seleccione...</option>
                                 <?php
                                     foreach( $resultadoMunicipioNacimiento as $filaMunicipioNacimiento){
@@ -191,12 +206,13 @@
                                     }
                                 
                                 ?>
-                        
+
                             </select>
                         </div>
                         <div class="col-md-12">
                             <label for="setMunicipioResidencia" class="form-label">Municipio Residencia </label>
-                            <select class="form-select" aria-label="Default select example" id="setMunicipioResidencia" name="setMunicipioResidencia" required>
+                            <select class="form-select" aria-label="Default select example" id="setMunicipioResidencia"
+                                name="setMunicipioResidencia" required>
                                 <option value="" selected>Seleccione...</option>
                                 <?php
                                     foreach( $resultadoMunicipioNacimiento as $filaMunicipioNacimiento){
@@ -209,19 +225,21 @@
                                 ?>
                             </select>
                         </div>
-                        <button type="submit" class="btn btn-primary"> <i class="fa-regular fa-floppy-disk"></i> Guardar</button>
+                        <button type="submit" class="btn btn-primary"> <i class="fa-regular fa-floppy-disk"></i>
+                            Guardar</button>
                     </form>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                    
+
                 </div>
             </div>
         </div>
     </div>
 
     <!-- Modal  modificar-->
-    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-dialog modal-fullscreen-xxl-down">
             <div class="modal-content">
                 <div class="modal-header">
@@ -229,7 +247,7 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    
+
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -244,4 +262,5 @@
     <script src="bootstrap/js/bootstrap.bundle.js"></script>
     <script src="bootstrap/js/bootstrap.js"></script>
 </body>
+
 </html>
