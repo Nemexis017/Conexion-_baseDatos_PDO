@@ -52,7 +52,7 @@
                     <th scope="col">N°</th>
                     <th scope="col">Numero Documento</th>
                     <th scope="col">Nombre</th>
-                    <th scope="col">Nombre N°2</th>
+                    <!-- <th scope="col">Nombre N°2</th> -->
                     <th scope="col">Apellido</th>
                     <th scope="col">Apellido N°2</th>
                     <th scope="col">Fecha de nacimiento</th>
@@ -68,7 +68,7 @@
                         // $tipoDocumentoId= $fila['tipoDocumentoId'];
                         $personaNumeroDocumento= $fila['personaNumeroDocumento'];
                         $personaPrimerNombre= $fila['personaPrimerNombre'];
-                        $personaSegundoNombre= $fila['personaSegundoNombre'];
+                        // $personaSegundoNombre= $fila['personaSegundoNombre'];
                         $personaPrimerApellido= $fila['personaPrimerApellido'];
                         $personaSegundoApellido= $fila['personaSegundoApellido'];
                         $personaFechaNacimiento= $fila['personaFechaNacimiento'];
@@ -80,19 +80,19 @@
                             // echo "<td>".$tipoDocumentoId."</td>";
                             echo "<td>".$personaNumeroDocumento."</td>";
                             echo "<td>".$personaPrimerNombre."</td>";
-                            echo "<td>".$personaSegundoNombre."</td>";
+                            // echo "<td>".$personaSegundoNombre."</td>";
                             echo "<td>".$personaPrimerApellido."</td>";
                             echo "<td>".$personaSegundoApellido."</td>";
                             echo "<td>".$personaFechaNacimiento."</td>";
                             echo "<td>".$personaTelefonoContacto."</td>";
-                            echo "<td>".$personaCorreoElectronico."</td>";
+                            echo "<td>".$personaCorreoElectronico."<i class='fa-solid fa-pen-to-square ubc-lef' data-bs-toggle='modal' data-bs-target='#staticBackdrop'></i></td>";
                         echo "</tr>";
                         $numero++;
                     }
                 ?>
             </tbody>
         </table>
-        <i class='fa-solid fa-pen-to-square ubc-lef' data-bs-toggle='modal' data-bs-target='#staticBackdrop'></i>
+        
         <!-- Button trigger modal -->
         <div class="col-12">
             <div class="row">
