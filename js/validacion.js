@@ -18,7 +18,28 @@
     })
   })();
 
-// confirmacion de borrar datos 
+// confirmacion de borrar datos
+
+function eliminarDato(id) {
+  if (confirm("¿Estás seguro de que deseas eliminar este dato?")) {
+    // Realiza una petición AJAX para enviar el ID del dato a un archivo PHP que realizará la eliminación en la base de datos
+    fetch('index.php', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ id: id })
+    })
+      .then(response => response.text())
+      .then(result => {
+        // Realiza acciones después de la eliminación exitosa, como mostrar un mensaje de éxito o actualizar la tabla
+      })
+      .catch(error => {
+        // Manejar errores durante la eliminación
+      });
+  }
+}
+
 
 
 

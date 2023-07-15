@@ -13,7 +13,7 @@
     $resultado= $conexion->consulta($querySql);
     $resultadoIdentificacion= $conexion->consulta($sqlTipoDocumento);
     $resultadoMunicipioNacimiento= $conexion->consulta($sqlMunicipioNacimiento);
-
+    
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -39,13 +39,13 @@
             <div class="col-3"></div>
             <div class="col-5 busquedaNavegacion">
                 <form class="d-flex" role="search" method="post">
-                    <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
-                    <button class="btn btn-outline-secondary" type="submit" name="enviar">Buscar</button>
+                    <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search" id="buscadorN">
+                    <label for="buscadorN"><i class="fa-sharp fa-solid fa-magnifying-glass"></i></label>
                 </form>
             </div>
         </div>
     </div>
-    <div class="container">
+    <div class="container-xxl">
         <table class="table">
             <thead>
                 <tr>
@@ -55,33 +55,44 @@
                     <th scope="col">Nombre N°2</th>
                     <th scope="col">Apellido</th>
                     <th scope="col">Apellido N°2</th>
+                    <th scope="col">Fecha de nacimiento</th>
+                    <th scope="col">Numero de telefono</th>
+                    <th scope="col">Correo electronico</th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody id="tablaQuery">
                 <?php
                     $numero=1;
                     foreach($resultado as $fila){
                         $personaId= $fila['personaId'];
+                        // $tipoDocumentoId= $fila['tipoDocumentoId'];
                         $personaNumeroDocumento= $fila['personaNumeroDocumento'];
                         $personaPrimerNombre= $fila['personaPrimerNombre'];
                         $personaSegundoNombre= $fila['personaSegundoNombre'];
                         $personaPrimerApellido= $fila['personaPrimerApellido'];
                         $personaSegundoApellido= $fila['personaSegundoApellido'];
+                        $personaFechaNacimiento= $fila['personaFechaNacimiento'];
+                        $personaTelefonoContacto= $fila['personaTelefonoContacto'];
+                        $personaCorreoElectronico= $fila['personaCorreoElectronico'];
 
                         echo "<tr>";
                             echo "<th scope='row' data-idPersona='".$personaId."' >".$numero."</th>";
+                            // echo "<td>".$tipoDocumentoId."</td>";
                             echo "<td>".$personaNumeroDocumento."</td>";
                             echo "<td>".$personaPrimerNombre."</td>";
                             echo "<td>".$personaSegundoNombre."</td>";
                             echo "<td>".$personaPrimerApellido."</td>";
-                            echo "<td>".$personaSegundoApellido."<i class='fa-solid fa-trash-can ubc-lef borrarDel'></i><i class='fa-solid fa-pen-to-square ubc-lef' data-bs-toggle='modal' data-bs-target='#staticBackdrop'></i></td>";
+                            echo "<td>".$personaSegundoApellido."</td>";
+                            echo "<td>".$personaFechaNacimiento."</td>";
+                            echo "<td>".$personaTelefonoContacto."</td>";
+                            echo "<td>".$personaCorreoElectronico."</td>";
                         echo "</tr>";
                         $numero++;
                     }
                 ?>
             </tbody>
         </table>
-
+        <i class='fa-solid fa-pen-to-square ubc-lef' data-bs-toggle='modal' data-bs-target='#staticBackdrop'></i>
         <!-- Button trigger modal -->
         <div class="col-12">
             <div class="row">
@@ -247,7 +258,50 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
+                <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">N°</th>
+                    <th scope="col">Numero Documento</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Nombre N°2</th>
+                    <th scope="col">Apellido</th>
+                    <th scope="col">Apellido N°2</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php
+                    $numero=1;
+                    foreach($resultado as $fila){
+                        $personaId= $fila['personaId'];
+                         // $tipoDocumentoId= $fila['tipoDocumentoId'];
+                        $personaNumeroDocumento= $fila['personaNumeroDocumento'];
+                        $personaPrimerNombre= $fila['personaPrimerNombre'];
+                        $personaSegundoNombre= $fila['personaSegundoNombre'];
+                        $personaPrimerApellido= $fila['personaPrimerApellido'];
+                        $personaSegundoApellido= $fila['personaSegundoApellido'];
+                        $personaFechaNacimiento= $fila['personaFechaNacimiento'];
+                        $personaTelefonoContacto= $fila['personaTelefonoContacto'];
+                        $personaCorreoElectronico= $fila['personaCorreoElectronico'];
 
+                        echo "<tr>";
+                            echo "<th scope='row' data-idPersona='".$personaId."' >".$numero."</th>";
+                             // echo "<td>".$tipoDocumentoId."</td>";
+                            echo "<td>".$personaNumeroDocumento."</td>";
+                            echo "<td>".$personaPrimerNombre."</td>";
+                            echo "<td>".$personaSegundoNombre."</td>";
+                            echo "<td>".$personaPrimerApellido."</td>";
+                            echo "<td>".$personaSegundoApellido."</td>";
+                            echo "<td>".$personaFechaNacimiento."</td>";
+                            echo "<td>".$personaTelefonoContacto."</td>";
+                            echo "<td>".$personaCorreoElectronico."</td>";
+                        echo "</tr>";
+                        $numero++;
+                    }
+                    
+                ?>
+            </tbody>
+        </table>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -263,4 +317,4 @@
     <script src="bootstrap/js/bootstrap.js"></script>
 </body>
 
-</html>
+</html>m

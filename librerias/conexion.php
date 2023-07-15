@@ -44,8 +44,9 @@
 
         public function borrar(){
             $conexion= $this->conectar();
-            $queryEjecutar= $conexion->prepare($querySql);
-            $queryEjecutar->execute($values);
+            $consulta = $conexion->prepare($sqlDelete);
+            $consulta->bindParam(':id', $id);
+            $consulta->execute();
         }
     }
 
