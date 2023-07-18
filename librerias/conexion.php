@@ -36,11 +36,23 @@
             return $resultado;
         }
 
+        public function consultaValor($querySql, $values){
+            $conexion= $this->conectar();
+            $consulta= $conexion->prepare($querySql);
+            $consulta->execute($values);
+            while ($fila = $consulta->fetch(PDO::FETCH_ASSOC)){
+                $resultado[]= $fila;
+            } 
+            return $resultado;
+        }
+
         public function ejecutar($querySql, $values){
             $conexion= $this->conectar();
             $queryEjecutar= $conexion->prepare($querySql);
             $queryEjecutar->execute($values);
         }
+
+
 
         public function borrar(){
             $conexion= $this->conectar();

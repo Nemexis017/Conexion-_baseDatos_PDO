@@ -68,15 +68,19 @@
                         // $tipoDocumentoId= $fila['tipoDocumentoId'];
                         $personaNumeroDocumento= $fila['personaNumeroDocumento'];
                         $personaPrimerNombre= $fila['personaPrimerNombre'];
-                        // $personaSegundoNombre= $fila['personaSegundoNombre'];
+                        $personaSegundoNombre= $fila['personaSegundoNombre'];
                         $personaPrimerApellido= $fila['personaPrimerApellido'];
                         $personaSegundoApellido= $fila['personaSegundoApellido'];
                         $personaFechaNacimiento= $fila['personaFechaNacimiento'];
                         $personaTelefonoContacto= $fila['personaTelefonoContacto'];
                         $personaCorreoElectronico= $fila['personaCorreoElectronico'];
 
-                        echo "<tr>";
-                            echo "<th scope='row' data-idPersona='".$personaId."' >".$numero."</th>";
+                        if($personaSegundoNombre == ""){
+                            $personaSegundoNombre = "N-A";
+                        }
+
+                        echo "<tr >";
+                            echo "<th scope='row'  >".$numero."</th>";
                             // echo "<td>".$tipoDocumentoId."</td>";
                             echo "<td>".$personaNumeroDocumento."</td>";
                             echo "<td>".$personaPrimerNombre."</td>";
@@ -85,7 +89,12 @@
                             echo "<td>".$personaSegundoApellido."</td>";
                             echo "<td>".$personaFechaNacimiento."</td>";
                             echo "<td>".$personaTelefonoContacto."</td>";
-                            echo "<td>".$personaCorreoElectronico."<i class='fa-solid fa-pen-to-square ubc-lef' data-bs-toggle='modal' data-bs-target='#staticBackdrop'></i></td>";
+                            echo "<td>".$personaCorreoElectronico."</td>";
+                            echo "<td>
+                                    <a href='actulizar.php?personaId=".$personaId."' >
+                                        <i class='fa-solid fa-pen-to-square ubc-lef sytle'></i>
+                                    </a>
+                                </td>";
                         echo "</tr>";
                         $numero++;
                     }
@@ -249,67 +258,7 @@
     </div>
 
     <!-- Modal  modificar-->
-    <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
-        aria-labelledby="staticBackdropLabel" aria-hidden="true">
-        <div class="modal-dialog modal-fullscreen-xxl-down">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="staticBackdropLabel">Modificar Registros</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                <table class="table">
-            <thead>
-                <tr>
-                    <th scope="col">N°</th>
-                    <th scope="col">Numero Documento</th>
-                    <th scope="col">Nombre</th>
-                    <th scope="col">Nombre N°2</th>
-                    <th scope="col">Apellido</th>
-                    <th scope="col">Apellido N°2</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php
-                    $numero=1;
-                    foreach($resultado as $fila){
-                        $personaId= $fila['personaId'];
-                         // $tipoDocumentoId= $fila['tipoDocumentoId'];
-                        $personaNumeroDocumento= $fila['personaNumeroDocumento'];
-                        $personaPrimerNombre= $fila['personaPrimerNombre'];
-                        $personaSegundoNombre= $fila['personaSegundoNombre'];
-                        $personaPrimerApellido= $fila['personaPrimerApellido'];
-                        $personaSegundoApellido= $fila['personaSegundoApellido'];
-                        $personaFechaNacimiento= $fila['personaFechaNacimiento'];
-                        $personaTelefonoContacto= $fila['personaTelefonoContacto'];
-                        $personaCorreoElectronico= $fila['personaCorreoElectronico'];
-
-                        echo "<tr>";
-                            echo "<th scope='row' data-idPersona='".$personaId."' >".$numero."</th>";
-                             // echo "<td>".$tipoDocumentoId."</td>";
-                            echo "<td>".$personaNumeroDocumento."</td>";
-                            echo "<td>".$personaPrimerNombre."</td>";
-                            echo "<td>".$personaSegundoNombre."</td>";
-                            echo "<td>".$personaPrimerApellido."</td>";
-                            echo "<td>".$personaSegundoApellido."</td>";
-                            echo "<td>".$personaFechaNacimiento."</td>";
-                            echo "<td>".$personaTelefonoContacto."</td>";
-                            echo "<td>".$personaCorreoElectronico."</td>";
-                        echo "</tr>";
-                        $numero++;
-                    }
-                    
-                ?>
-            </tbody>
-        </table>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Understood</button>
-                </div>
-            </div>
-        </div>
-    </div>
+    
     <script src="js/validacion.js"></script>
     <script src="js/confirmacion.js"></script>
     <!-- <script src="js/jquery-3.6.4.min.js"></script> -->
@@ -317,4 +266,4 @@
     <script src="bootstrap/js/bootstrap.js"></script>
 </body>
 
-</html>m
+</html>
