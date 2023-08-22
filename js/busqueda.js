@@ -1,8 +1,7 @@
 window.onload= function(){
-
     // para la busqueda de usuarios
     document.querySelector('.form-control').onkeyup = function(){
-            var input = document.getElementById('buscadorN');
+        var input = document.getElementById('buscadorN');
             var filtro = input.value.toUpperCase();
             var tabla = document.getElementById('tablaQuery');
             var filas = tabla.getElementsByTagName('tr');
@@ -30,30 +29,7 @@ window.onload= function(){
             }
     
     }
-    // document.querySelector('.borrarDel').onclick= function confirmacion(){
-    //     if(confirm('¿Estas seguro de eliminar este registro?')){
-    //         return true;
-    //     } else(
-    //         e.preventDefault()
-    //     ); 
-        
-        
-    // }
 }
 
 
 
-
-// function confirmacion(e){
-//     if (confirm('¿Estas seguro que deseas hacerlo?')){
-//         return true; 
-//     } else{
-//         e.preventDefault(); 
-//     }
-// }
-
-// let  uDelete =document.querySelectorAll('borrarDel');
-
-// for (var i = 0; i < uDelete.length; i++){
-//     uDelete[i].addEventListener('click', confirmacion);
-// }

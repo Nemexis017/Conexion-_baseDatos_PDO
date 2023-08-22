@@ -26,7 +26,7 @@
             return $conexion;
         }
 
-        // metodos para consultas y demas
+        // metodos para consultas 
         public function consulta($querySql){
             $conexion= $this->conectar();
             $consulta= $conexion->query($querySql);
@@ -46,19 +46,11 @@
             return $resultado;
         }
 
+        // insertar, borrar, actualizar 
         public function ejecutar($querySql, $values){
             $conexion= $this->conectar();
             $queryEjecutar= $conexion->prepare($querySql);
             $queryEjecutar->execute($values);
-        }
-
-
-
-        public function borrar(){
-            $conexion= $this->conectar();
-            $consulta = $conexion->prepare($sqlDelete);
-            $consulta->bindParam(':id', $id);
-            $consulta->execute();
         }
     }
 

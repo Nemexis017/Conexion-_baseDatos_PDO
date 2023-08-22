@@ -6,7 +6,6 @@
     $sqlTipoDocumento= "SELECT * FROM registropersonas.tipodocumento";
     $sqlMunicipioNacimiento= "SELECT * FROM registropersonas.municipio";
 
-
     $personaId=$_GET['personaId'];
     $sqlPersona="SELECT * FROM persona WHERE personaId=:personaId;";
     $values = array(
@@ -59,8 +58,8 @@
 </head>
 <body>
     <div class="container">
-        <form action="librerias/registrar.php" method="post" class="row g-3 needs-validation" novalidate>
-            <div class="col-12">
+        <form action="librerias/update.php" method="post" class="col-12 row" novalidate>
+            <div class="col-6">
                 <label for="selTipoIdentificacion" class="form-label">Tipo de Identificación</label>
                 <select class="form-select" aria-label="Default select example" id="selTipoIdentificacion" name="selTipoIdentificacion" required>
                     <option value="" selected>Seleccione...</option>
@@ -81,63 +80,63 @@
                         ?>
                 </select>
             </div>            
-            <div class="col-12">
+            <div class="col-6">
                 <label for="txtIdentificacion" class="form-label">Identificación</label>
                 <input type="text" class="form-control" id="txtIdentificacion" name="txtIdentificacion" value="<?php echo $numeroDocumento?>" required>
                 <div class="valid-feedback">
                     Digitar el numero de Indentificacion
                 </div>
             </div>
-            <div class="col-12">
+            <div class="col-6">
                 <label for="txtPrimerNombre" class="form-label">Primer nombre</label>
                 <input type="text" class="form-control" id="txtPrimerNombre" name="txtPrimerNombre" value="<?php echo $primerNombre ?>" required>
                 <div class="valid-feedback">
                     Digitar el primer nombre
                 </div>
             </div>
-            <div class="col-12">
+            <div class="col-6">
                 <label for="txtNombres" class="form-label">Segundo nombre</label>
                 <input type="text" class="form-control" id="txtSegundoNombre" name="txtSegundoNombre" value="<?php echo $segundoNombre ?>" required>
                 <div class="valid-feedback">
                     Digitar el segundo nombre
                 </div>
             </div>  
-            <div class="col-12">
+            <div class="col-6">
                 <label for="txtPrimerApellido" class="form-label">Primer apellido</label>
                 <input type="text" class="form-control" id="txtPrimerApellido" name="txtPrimerApellido" value="<?php echo $primerApellido ?>" required>
                 <div class="valid-feedback">
                     Digitar el primer apellido
                 </div>
             </div>
-            <div class="col-12">
+            <div class="col-6">
                 <label for="txtSegundoApellido" class="form-label">Segundo apellido</label>
                 <input type="text" class="form-control" id="txtSegundoApellido" name="txtSegundoApellido" value="<?php echo $segundoApellido ?>" required>
                 <div class="valid-feedback">
                     Digitar el segundo apellido
                 </div>
             </div>
-            <div class="col-12">
+            <div class="col-6">
                 <label for="selFechaNacimiento" class="form-label">Fecha Nacimieto</label>
                 <input type="date" class="form-control" id="selFechaNacimiento" name="selFechaNacimiento" value="<?php echo $fechaNacimiento ?>" required>
                 <div class="valid-feedback">
                     Seleccione la fecha de nacimiento
                 </div>
             </div>
-            <div class="col-12">
+            <div class="col-6">
                 <label for="txtTelefono" class="form-label">Telefono</label>
                 <input type="text" class="form-control" id="txtTelefono" name="txtTelefono" value="<?php echo $telfonoPersona ?>" required>
                 <div class="valid-feedback">
                     Digitar el telefono
                 </div>
             </div>
-            <div class="col-12">
+            <div class="col-6">
                 <label for="txtCorreoEletronico" class="form-label">Correo Eletronico</label>
                 <input type="text" class="form-control" id="txtCorreoEletronico" name="txtCorreoEletronico" value="<?php echo $correoElectronico ?>" required>
                 <div class="valid-feedback">
                     Digitar el correo eletronico
                 </div>
             </div>
-            <div class="col-12">
+            <div class="col-6">
                 <label for="selMunicipioNacimiento" class="form-label">Municipio Nacimiento</label>
                 <select class="form-select" aria-label="Default select example" id="selMunicipioNacimiento" name="selMunicipioNacimiento" required>
                     <option value="" selected>Seleccione...</option>
@@ -179,8 +178,11 @@
                                 
                         ?>
                 </select>
-            </div>                        
-            <button type="submit" class="btn btn-primary"> <i class="fa-regular fa-floppy-disk"></i>Guardar</button>
+            </div>
+            <input type="hidden" name="txtIdPersona" id="txtIdPersona" value="<?php echo $personaId ?>"/> 
+            <button class="btn btn-danger" type="submit"><i class="fa-solid fa-trash-can"></i> BORRAR REGISTRO</button>
+            <br>                        
+            <button type="submit" class="btn btn-primary"> <i class="fa-regular fa-floppy-disk"></i> Guardar cambios</button>
         </form>
     </div>
 

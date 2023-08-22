@@ -1,8 +1,12 @@
 <?php
     include('librerias/conexion.php');
+    $consulta= ""; 
+    if(isset($_GET['txtConsultaPersona'])){
+        $consulta= " WHERE personaPrimerNombre like'%".$_GET['txtConsultaPersona']."%'"; 
+    }
 
     // Consultas de datos
-    $querySql= "SELECT * FROM persona"; 
+    $querySql= "SELECT * FROM persona" .$consulta; 
     $sqlTipoDocumento= "SELECT * FROM registropersonas.tipodocumento";
     $sqlMunicipioNacimiento= "SELECT * FROM registropersonas.municipio";
 
@@ -44,6 +48,7 @@
                 </form>
             </div>
         </div>
+        
     </div>
     <div class="container-xxl">
         <table class="table">
@@ -105,18 +110,28 @@
         <!-- Button trigger modal -->
         <div class="col-12">
             <div class="row">
-                <div class="col-6"></div>
-                <div class="col-6 ">
-                    <button type="button" class="btn  btn-secondary ubc-lef bnt-agregar" data-bs-toggle="modal"
-                        data-bs-target="#exampleModal"><i class="fa-solid fa-user-plus"></i> Registrar</button>
+                <div class="col-8"></div>
+                <div class="col-2 ">
+                    <div class="d-flex justify-content-end">
+                        <button type="button" class="btn btn-secondary ubc-lef" data-bs-toggle="modal" data-bs-target="#modalBuscar">
+                            <i class="fa-solid fa-magnifying-glass"></i> Buscar
+                        </button>
+                    </div>
                 </div>
+                <div class="col-2">
+                    <div class="d-flex justify-content-start">
+                        <button type="button" class="btn  btn-secondary ubc-lef bnt-agregar" data-bs-toggle="modal"
+                        data-bs-target="#modalRegistrar"><i class="fa-solid fa-user-plus"></i> Registrar</button>
+                    </div>
+                </div>
+
             </div>
         </div>
     </div>
 
     <!-- Modal -->
 
-    <div class="modal fadev" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fadev" id="modalRegistrar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog modal-dialog-centered modal-dialog-scrollable">
             <div class="modal-content">
                 <div class="modal-header">
@@ -246,22 +261,52 @@
                             </select>
                         </div>
                         <button type="submit" class="btn btn-primary"> <i class="fa-regular fa-floppy-disk"></i>
-                            Guardar</button>
+                            Guardar
+                        </button>
                     </form>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-
                 </div>
             </div>
         </div>
     </div>
+    <div class="modal fadev" id="modalBuscar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">Buscar Persona</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="index.php" method="GET" class="needs-validation" novalidate>
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <input type="text" name="txtConsultaPersona" id="txtConsultaPersona" class="form-control"  required>
+                                    <div class="invalid-feedback">
+                                        Por favor, complete el campo.
+                                    </div>
+                                </div>
+                            </div>
+                            <br>
+                            <div class="col-md-12 align-self-center">
+                                <button type="submit" class="btn btn-primary">Buscar</button>
+                            </div>
+                        </div>
+                    </form>
+                            
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>    
 
     <!-- Modal  modificar-->
-    
     <script src="js/validacion.js"></script>
-    <script src="js/confirmacion.js"></script>
-    <!-- <script src="js/jquery-3.6.4.min.js"></script> -->
+    <script src="js/busqueda.js"></script>
     <script src="bootstrap/js/bootstrap.bundle.js"></script>
     <script src="bootstrap/js/bootstrap.js"></script>
 </body>
