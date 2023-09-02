@@ -2,7 +2,7 @@
     include('librerias/conexion.php');
 
     // Consultas de datos
-    $querySql= "SELECT * FROM persona"; 
+    // $querySql= "SELECT * FROM persona"; 
     $sqlTipoDocumento= "SELECT * FROM registropersonas.tipodocumento";
     $sqlMunicipioNacimiento= "SELECT * FROM registropersonas.municipio";
 
@@ -12,12 +12,13 @@
         ':personaId' => $personaId,
     );
 
-
+    
     // Conexion a la base de datos
     $conexion= new conexion();
 
     // Metodos de la clase
-    $resultado= $conexion->consulta($querySql);
+    
+    // $resultado= $conexion->consulta($querySql);
     $resultadoIdentificacion= $conexion->consulta($sqlTipoDocumento);
     $resultadoMunicipioNacimiento= $conexion->consulta($sqlMunicipioNacimiento);
     $resultadoIndividual= $conexion->consultaValor($sqlPersona, $values);
@@ -180,13 +181,10 @@
                 </select>
             </div>
             <input type="hidden" name="txtIdPersona" id="txtIdPersona" value="<?php echo $personaId ?>"/> 
-            <button class="btn btn-danger" type="submit"><i class="fa-solid fa-trash-can"></i> BORRAR REGISTRO</button>
             <br>                        
             <button type="submit" class="btn btn-primary"> <i class="fa-regular fa-floppy-disk"></i> Guardar cambios</button>
         </form>
     </div>
-
-
     <script src="js/validacion.js"></script>
     <script src="js/confirmacion.js"></script>
     <!-- <script src="js/jquery-3.6.4.min.js"></script> -->

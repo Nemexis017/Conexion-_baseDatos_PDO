@@ -9,7 +9,7 @@
     // );
 
     $valoresUpdate= array(
-        ":Idpersona"=> $_POST['txtIdPersona'],
+        ":idPesona"=> $_POST['txtIdPersona'],
         ":tipoDocumento" => $_POST['selTipoIdentificacion'],
         ":numeroDocumento" => $_POST['txtIdentificacion'],
         ":primerNombre" => $_POST['txtPrimerNombre'],
@@ -22,13 +22,9 @@
         ":numeroTelefono" => $_POST['txtTelefono'],
         ":correoEletronico" => $_POST['txtCorreoEletronico'],
     );
-
-    // $sqlUpdate= "UPDATE `registropersonas`.`persona` SET";
-    // $datosUpdate = array();
-
-    // foreach()
-
-
+    // borrar datos
+    
+    // ********************
     $sqlUpdate= "UPDATE `registropersonas`.`persona`
     SET
     `tipoDocumentoId` = :tipoDocumento,
@@ -42,7 +38,7 @@
     `personaFechaNacimiento` = :fechaNacimiento,
     `personaTelefonoContacto` = :numeroTelefono,
     `personaCorreoElectronico` = :correoEletronico
-    WHERE `personaId` = :Idpersona; ";
+    WHERE `personaId` = :idPesona; ";
 
     $conexion->ejecutar($sqlUpdate,$valoresUpdate);    
     header('Location:http://localhost/ejercicioSena/registroPersonas/');

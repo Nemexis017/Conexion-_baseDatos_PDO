@@ -27,4 +27,28 @@
     color: #000000;
 }
 
+/* actualizar */
+
+.obligacion{ 
+    color: #ff0000;
+}
+
+.aviso-obligacion {
+    font-weight: bolder;
+    text-decoration: none;
+}
+
+.aviso-obligacion:hover{
+    box-shadow: none;
+}
+
+.titulo-modal{
+    text-align: center;
+    color: #ff0000;
+    font-family: Verdana !important;
+
+}
+
+
+
 

@@ -52,6 +52,13 @@
             $queryEjecutar= $conexion->prepare($querySql);
             $queryEjecutar->execute($values);
         }
+
+        public function borrar($deleteSql, $value){
+            $conexion= $this->conectar();
+            $delete = $conexion->prepare($deleteSql);
+            $delete->bindParam("id", $value, PDO::PARAM_INT);
+            $delete->execute();
+        }
     }
 
 ?>
